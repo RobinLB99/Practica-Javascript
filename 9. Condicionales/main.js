@@ -63,7 +63,7 @@ else if (hora > 18 && hora < 24) {
   console.log('Buenos dias');
 }
 
-/* Operador ternerio - Sieve para ejecutar una conciocion en una solo linea de codigo*/
+/* Operador ternerio - Sirve para ejecutar una conciocion en una solo linea de codigo*/
 console.log('Operador ternario ***********');
   // variable = (condicion) ? verdadero : falso
 
