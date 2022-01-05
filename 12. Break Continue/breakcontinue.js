@@ -1,6 +1,6 @@
 let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-/* Break rompera la extructura de contro. En el caso de este ciclo, al llegar a la posicion 5 del arreglo bloque dejara todo el ciclo dejara de ejecutarse. */
+/* Break rompera la extructura de control. En el caso de este ciclo, al llegar a la posicion 5 del arreglo bloque dejara todo el ciclo dejara de ejecutarse. */
 for (var i = 0; i < numeros.length; i++){
     if (i === 5){
         break;
