@@ -50,7 +50,7 @@
         nombre: "Boby",
         ladrar(){
             console.log(this);
-            // Hace referencia l objeto perro.
+            // Hace referencia al objeto perro.
         }
     }
     perro.ladrar();
