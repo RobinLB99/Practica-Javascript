@@ -22,7 +22,7 @@ const student = {
         console.log('Hola compañeros');
     }
 };
-/* Debido a que el objeto y la variable tienen el mismo nombre, esto permite que javascript asigne dinamicamente el valor de la variable al objeto del mismo nombre. Ademas, se declara directamente la funcion como que si la estubieramos invocando y el nombre del objeto se le asigna dinamicamente el nombre de la funcion. unaFuncion(){codigo} */
+/* Escribir el nombre de la variable de esta manera dentro del objeto hara que javascript lo asigne a una propiedad con el mismo nombre dinamicamente. Ademas, podemos declarar la funcion como si la invocaramos y el nombre de la propiedad se le asignara dinamicamente el mismo nombre de la funcion. unaFuncion(){codigo} */
 
 console.log(student);
 student.hablar();
