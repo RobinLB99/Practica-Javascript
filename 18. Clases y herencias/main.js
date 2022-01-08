@@ -1,9 +1,9 @@
 // Clases y herencias
 
-/* La sisntaxis de clases en javascript es una azucar sintactica que nos
-ayuda escribir de manera mas sencilla el codigo. Javascript es un lenguaje
+/* La sisntaxis de clases en javascript es una azucar sintactica ( se refere a los añadidos a la sintaxis de un
+lenguaje de programación diseñados para hacer algunas construcciones más fáciles de leer o expresar). Javascript es un lenguaje
 que se maneja por prototipos, pero gracias a esta azucar sintactica podemos
-escribir clases y javascript internamente lo convierte en prototipo. */
+escribir clases y javascript internamente la maneja como prototipos. */
 
 // CLases
     class Animal{
