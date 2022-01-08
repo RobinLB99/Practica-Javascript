@@ -92,7 +92,7 @@ escribir clases y javascript internamente la maneja como prototipos. */
     /*
     Consola:
 
-        Conejo {nombre: 'Buzz Bonnie', genero: 'Macho'}
+        Conejo {nombre: 'Buzz Bonnie', genero: 'Macho' tamanio: 'Mediano'}
         genero: "Macho"
         nombre: "Buzz Bonnie"
         tamanio: "Mediano"
