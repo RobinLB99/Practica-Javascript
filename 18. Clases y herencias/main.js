@@ -93,14 +93,14 @@ escribir clases y javascript internamente la maneja como prototipos. */
     Consola:
 
         Conejo {nombre: 'Buzz Bonnie', genero: 'Macho' tamanio: 'Mediano'}
-        genero: "Macho"
-        nombre: "Buzz Bonnie"
-        tamanio: "Mediano"
-        [[Prototype]]: Animal
-            constructor: class Conejo
-            sonar: ƒ sonar()
-            sonido: ƒ sonido()
-            [[Prototype]]: Object
+            genero: "Macho"
+            nombre: "Buzz Bonnie"
+            tamanio: "Mediano"
+            [[Prototype]]: Animal
+                constructor: class Conejo
+                sonar: ƒ sonar()
+                sonido: ƒ sonido()
+                [[Prototype]]: Object
 
         Hola, me llamo Buzz Bonnie
         Soy un conejo y digo "Que hay de nuevo viejo?"
