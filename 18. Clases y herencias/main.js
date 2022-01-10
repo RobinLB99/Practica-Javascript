@@ -1,9 +1,6 @@
 // Clases y herencias
 
-/* La sisntaxis de clases en javascript es una azucar sintactica ( se refere a los añadidos a la sintaxis de un
-lenguaje de programación diseñados para hacer algunas construcciones más fáciles de leer o expresar). Javascript es un lenguaje
-que se maneja por prototipos, pero gracias a esta azucar sintactica podemos
-escribir clases y javascript internamente la maneja como prototipos. */
+/* La sisntaxis de clases en javascript es una azucar sintactica ( se refere a los añadidos a la sintaxis de un lenguaje de programación diseñados para hacer algunas construcciones más fáciles de leer o expresar). Javascript es un lenguaje que se maneja por prototipos, pero gracias a esta azucar sintactica podemos escribir clases y javascript internamente la maneja como prototipos. */
 
 // CLases
     class Animal{
@@ -54,22 +51,22 @@ escribir clases y javascript internamente la maneja como prototipos. */
 
 // Herencias
 
-    /* Cuando se quiere que una clase herede propiedades de otra, se escribe la nueva clase y a
-    continuacion la palabra reservada extends seguido de la clase padre del que va a heredar
-    (   Class nuevaClase extends clasePadre{
+    /*
+    Cuando se quiere que una clase herede propiedades de otra, se escribe la nueva clase y a continuacion la palabra reservada extends seguido de la clase padre del que va a heredar
+        Class nuevaClase extends clasePadre{
             constructor(parametroPadre1, parametroPadre2, nuevoParametro){
                 /codigo/
             }
         }
-    ) */
+    */
     class Conejo extends Animal {
-        constructor(nombre, genero, tamanio){
+        constructor(nombre, genero, altura){
 
             /* super() es un metodo que va a llamar el constructor de la clase padre */
             super(nombre, genero); // Trae las propiedades de la clase Animal (herencia)
 
             // Propiedad la clase Conejo
-            this.tamanio = tamanio;
+            this.altura = altura;
         }
 
         /* La sobre escritura del metodo de la clase Animal */
@@ -92,10 +89,10 @@ escribir clases y javascript internamente la maneja como prototipos. */
     /*
     Consola:
 
-        Conejo {nombre: 'Buzz Bonnie', genero: 'Macho' tamanio: 'Mediano'}
+        Conejo {nombre: 'Buzz Bonnie', genero: 'Macho' altura: 'Mediana'}
             genero: "Macho"
             nombre: "Buzz Bonnie"
-            tamanio: "Mediano"
+            altura: "Mediano"
             [[Prototype]]: Animal
                 constructor: class Conejo
                 sonar: ƒ sonar()
