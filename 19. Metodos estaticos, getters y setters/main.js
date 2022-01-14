@@ -13,6 +13,7 @@ class Animal{
 
 class Conejo extends Animal {
     constructor(nombre, genero, altura){
+        // Funcion super(). Hereda los atributos de la clase padre.
         super(nombre, genero);
         this.altura = altura;
         this.raza = null;
@@ -25,7 +26,7 @@ class Conejo extends Animal {
     }
     /* Un metodo estatico es aquel que se puede ejecutar sin necesidad de instanciar la clase. */
     static queEres(){
-        console.log(`Los conojos somos roedores, que tiene dos orejas grandes`);
+        console.log(`Los conejos somos roedores, que tiene dos orejas grandes`);
     }
     /* Los getters y setters son metodos especiales que nos permiten establecer y obtener los valores de atrubutos de nuestra clase */
     get getRaza(){
@@ -34,7 +35,7 @@ class Conejo extends Animal {
 
     set setRaza(raza){
         this.raza = raza;
-    } // set setRaza() - no establecera el valor para el atributo raza en el memento que lo desee.
+    } // set setRaza() - Establecera el valor para el atributo raza en el momento que lo desee.
 
     /*Aunque son metodos los vamos a utilizar como que si fueran atributos */
 }
