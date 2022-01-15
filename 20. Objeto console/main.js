@@ -33,15 +33,19 @@
   */
 
 /* Muestra las propiedades del objeto window*/
+  /*-*/console.log(`console.log(window)`);
   console.log(window);
 
 /*Muestra la extructura del html*/
+  /*-*/console.log(`console.log(document)`);
   console.log(document);
 
 /* Al igual que console.log(), me muestra las propiedades del objeto window*/
+  /*-*/console.log(`console.dir(window)`);
   console.dir(window);
 
 /* Me muestra las propiedades del objeto document*/
+  /*-*/console.log(`console.dir(document)`);
   console.dir(document);
 
 /* Nos indica el inicio de un grupo de mensajes en la consola */
