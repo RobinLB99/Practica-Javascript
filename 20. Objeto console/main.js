@@ -42,7 +42,7 @@
 
 /* Cunado se quiera representar un elemento como que si fuera un objeto y ver todas sus propiedades, utilizar console.dir() */
   /* Al igual que console.log(), me muestra las propiedades del objeto window*/
-    /*-*/console.log(`console.dir(window)`);
+    /*-*/console.info(`console.dir(window)`);
     console.dir(window);
 
   /* Me muestra las propiedades del objeto document*/
