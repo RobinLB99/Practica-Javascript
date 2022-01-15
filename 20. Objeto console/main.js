@@ -40,13 +40,14 @@
   /*-*/console.log(`console.log(document)`);
   console.log(document);
 
-/* Al igual que console.log(), me muestra las propiedades del objeto window*/
-  /*-*/console.log(`console.dir(window)`);
-  console.dir(window);
+/* Cunado se quiera representar un elemento como que si fuera un objeto y ver todas sus propiedades, utilizar console.dir() */
+  /* Al igual que console.log(), me muestra las propiedades del objeto window*/
+    /*-*/console.log(`console.dir(window)`);
+    console.dir(window);
 
-/* Me muestra las propiedades del objeto document*/
-  /*-*/console.log(`console.dir(document)`);
-  console.dir(document);
+  /* Me muestra las propiedades del objeto document*/
+    /*-*/console.log(`console.dir(document)`);
+    console.dir(document);
 
 /* Nos indica el inicio de un grupo de mensajes en la consola */
   console.group('Cursos de jonmircha');
@@ -63,3 +64,47 @@
   console.table(Object.entries(console));
   // En orden alfabetico
     console.table(Object.entries(console).sort());
+
+  const numeros = [1, 2, 3, 4, 5, 6, 7, 8],
+    vocales = ["a","e","i",'o',"u"];
+  console.table(numeros);
+  console.table(vocales);
+
+  const perro = {
+    nombre: "Toby",
+    raza: "Golden",
+    edad: 1
+  }
+  console.table(perro);
+
+/* Sirve para calcular el tiempo de ciclo de un codigo */
+  console.time('Cuanto tarda mi codigo');
+
+    const arreglo = Array(1000000);
+
+    for (let i = 0; i < arreglo.length; i++){
+      arreglo[i] = i * 2;
+    }
+
+  console.timeEnd('Cuanto tarda mi codigo');
+
+  // console.log(arreglo)
+
+/* console.count() - Sirve para saber contar el numero de veces que se ha ejecutado un evento */
+  function aleatorio(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  let num = aleatorio(0, 100);
+
+  for (let i = 0; i < num; i++){
+    console.count("Codigo for")
+    console.log(i);
+  }
+
+/* Console.assert() - Sirve para realizar pruebas donde se espara que ocurra cierto resultado y en el caso de no obtener el resultado esperado laza un mesaje de error en consola */
+  let x = 3,
+    y = 2,
+    pruebaXY = "Se espera que x sea menor y"
+
+  console.assert(x < y, {x,y,pruebaXY});
