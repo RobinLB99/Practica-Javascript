@@ -33,11 +33,11 @@
   */
 
 /* Muestra las propiedades del objeto window*/
-  /*-*/console.log(`console.log(window)`);
+  /*-*/console.info(`console.log(window)`);
   console.log(window);
 
 /*Muestra la extructura del html*/
-  /*-*/console.log(`console.log(document)`);
+  /*-*/console.info(`console.log(document)`);
   console.log(document);
 
 /* Cunado se quiera representar un elemento como que si fuera un objeto y ver todas sus propiedades, utilizar console.dir() */
@@ -78,6 +78,7 @@
   console.table(perro);
 
 /* Sirve para calcular el tiempo de ciclo de un codigo */
+  console.info('console.time()/console.timeEnd()');
   console.time('Cuanto tarda mi codigo');
 
     const arreglo = Array(1000000);
@@ -91,6 +92,7 @@
   // console.log(arreglo)
 
 /* console.count() - Sirve para saber contar el numero de veces que se ha ejecutado un evento */
+  console.info('console.count()');
   function aleatorio(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -103,6 +105,7 @@
   }
 
 /* Console.assert() - Sirve para realizar pruebas donde se espara que ocurra cierto resultado y en el caso de no obtener el resultado esperado laza un mesaje de error en consola */
+  console.info('console.assert()')
   let x = 3,
     y = 2,
     pruebaXY = "Se espera que x sea menor y"
