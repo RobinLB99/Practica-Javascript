@@ -15,20 +15,20 @@
             return c;
             /*
             return a + b;
-            */ 
+            */
             /* La funcion se ejecuta hasta el return. Despues del return no se ejecuta otra
             linea de codigo */
-        } 
+        }
 
         /* Tambien puedo declarar un valor por defecto a los parametros para cuando no
-            no se envie un parametro al momento de invocarla */ 
+            no se envie un parametro al momento de invocarla */
         function saludar(nombre = "Desconocido", edad = 0){
             console.log(`Hola, mi nombre es ${nombre} y tengo ${edad} años.`);
         }
-        
+
         // Funcion anonima
 
-        /* expresada(); - 
+        /* expresada(); -
         Este tipo de funcion no se puede invocar antes de serinicializada.*/
         const expresada = function(){
             console.log(`Funcion declarada como una constante. Esta se puede invocar como cualquier otra funcion, por ejemplo: expresada();, pero no antes de la linea donde se inicializa`);
@@ -45,15 +45,15 @@
 
     saludar("Robin", 22);
     saludar();
-    
-    expresada(); 
-    /* NO se puede invocar antes de las lineas de donde se declara, ya que se declaro 
+
+    expresada();
+    /* NO se puede invocar antes de las lineas de donde se declara, ya que se declaro
     como una constante, donde estas se len deacuerdo al orden en el que estan escritas */
-   
-/* Existen dos formas de crear una funcion: 
+
+/* Existen dos formas de crear una funcion:
     * funcion declarada:
         function nombreDeLaFuncion(){};
-    
+
     * Funcion asignada:
         const nombreDeLaFuncion = function(){};
 */
