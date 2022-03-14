@@ -16,7 +16,7 @@ console.log("La longitud de la variable nombre es: " + nombre.length);
 console.log("La longitud de la variable apellido es: " + apellido.length);
 console.log("La longitud de la variable saludo es: " + saludo.length);
 
-//Metodos de las cadena de texto 
+//Metodos de las cadena de texto
 
 console.log(
     nombre.toUpperCase(), // Convierte el texto en mayusculas
@@ -53,12 +53,12 @@ console.log(`Hola. Mi nombre es ${nombre} ${apellido}.`);
 let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
 console.log(ul);
 
-let ul2 = 
-    "<ul>" + 
-        "<li>Primavera</li>" + 
-        "<li>Verano</li>" + 
-        "<li>Otoño</li>" + 
-        "<li>InvierInvierno</li>" + 
+let ul2 =
+    "<ul>" +
+        "<li>Primavera</li>" +
+        "<li>Verano</li>" +
+        "<li>Otoño</li>" +
+        "<li>InvierInvierno</li>" +
     "</ul>"
 ;
 console.log(ul2);
