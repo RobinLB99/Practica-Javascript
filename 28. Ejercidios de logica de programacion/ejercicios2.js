@@ -91,4 +91,4 @@ function eliminarPatron(cadena, patron){
     return texto = texto.join(" ");
 }
 
-console.info(eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz"));
+console.info(eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz")); // 1, 2, 3, 4 y 5
