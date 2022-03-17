@@ -37,6 +37,7 @@ capicua(2002);
 const factorial = (numero) => {
     if(!numero) return console.warn("No ingreso el parametro 'numero'");
     if(typeof numero !== "number") return console.error("El parametro ingresado no es un numero");
+    if (numero <= 0) return console.error("No se puede sacar factorial de un numero negativo");
 
     fact = 1;
     for(let i = numero; i > 0; i--){
