@@ -14,18 +14,24 @@ const aleatorio = (min, maxi) => {
 
 aleatorio(501, 600);
 
+// Solucion jonmircha -----------------------------------
+
+const aleatorie = () => console.info(Math.round(Math.random() * 100) + 500);
+aleatorie();
+
 /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un
     sentido que en otro), pe. miFuncion(2002) devolverá true. */
 
 const capicua = (numero) => {
     if (!numero) return console.warn("No ingresate el parametro 'numero'")
-    if (!(typeof numero === "number")) return console.error("El parametro 'numero' no es un numero")
+    if (typeof numero !== "number") return console.error("El parametro 'numero' no es un numero")
 
-    num = parseInt(numero.toString().split("").reverse().join(""));
+    numero = numero.toString();
+    nuevoNumero = numero.split("").reverse().join("");
 
-    return (numero !== num)
-        ? console.info(`El numero no es capicua. Numero inicial: ${numero}. Numero final: ${num}`)
-        : console.info(`El numero es capicua. Numero inicial: ${numero}. Numero final: ${num}`)
+    return (numero !== nuevoNumero)
+        ? console.info(`El numero no es capicua. Numero inicial: ${numero}. Numero final: ${nuevoNumero}`)
+        : console.info(`El numero es capicua. Numero inicial: ${numero}. Numero final: ${nuevoNumero}`)
 }
 
 capicua(2002);
@@ -47,4 +53,3 @@ const factorial = (numero) => {
 }
 
 factorial(5);
-
