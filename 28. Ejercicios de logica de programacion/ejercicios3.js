@@ -5,9 +5,9 @@ const aleatorio = (min, maxi) => {
         ? console.warn("No ingresaste el numero minimo")
         : (!maxi)
             ? console.warn("No ingresaste el numero maximo")
-            : (!(typeof min === "number"))
+            : (typeof min !== "number")
                 ? console.error("El parametro 'min' no es un numero")
-                : (!(typeof maxi === "number"))
+                : (typeof maxi !== "number")
                     ? console.error("El parametro 'maxi' no es un numero")
                     : console.info(`El numero aleatorio entre ${min} y ${maxi} es: ${resultado = Math.floor(Math.random() * (maxi - min + 1) + min)}`)
 }
