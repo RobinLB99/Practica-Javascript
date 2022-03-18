@@ -48,7 +48,6 @@ parImpar(29);
         if (!medida) return console.warn("No ingreso la medida del grado a convertir");
         if (typeof medida !== "string") return console.error("El parametro 'medida' no es una cadena de texto");
 
-        medida = medida.toUpperCase();
         gradosCelsius = Math.round((grados - 32) / 1.8)
         gradosFahrenheit = Math.round((grados * 1.8) + 32)
 
@@ -62,4 +61,4 @@ parImpar(29);
         return console.warn(`El grado especificado no es valido`)
     }
 
-    convertirGrados(0, "c");
+    convertirGrados(0, "C");
