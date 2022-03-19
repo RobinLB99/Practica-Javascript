@@ -26,8 +26,12 @@ const convertirBase = (numero = undefined, base = undefined) => {
             De ser verdad expReg sera igual a true y si no sera igual a false. */
         expReg = /[2-9]/.test(base2);
 
-        if(expReg === false){
+        if(expReg === true){
+            console.error(`${numero} no es de base 2`);
+        }
+        else{
             decimal = [];
+            base10 = 0;
 
             for (let i = 0; i < base2.length; i++) {
                 exp = 2;
@@ -36,15 +40,11 @@ const convertirBase = (numero = undefined, base = undefined) => {
                 exp--;
             }
 
-            let base10 = 0;
-
             for(let i = 0; i < decimal.length; i++) {
                 base10 = base10 + decimal[i];
             }
+
             return console.info(`${numero} base ${base}  =  ${base10} base 10`);
-        }
-        else{
-            console.error(`${numero} no es de base 2`);
         }
     }
 }
