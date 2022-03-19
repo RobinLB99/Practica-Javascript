@@ -21,6 +21,7 @@ const convertirBase = (numero = undefined, base = undefined) => {
     }
     if(base === 2) {
         let base2 = numero.toString().split("");
+
         /* Determina si el numero ingresado contiene numeros de entre 2 y 9.
             De ser verdad expReg sera igual a true y si no sera igual a false. */
         expReg = /[2-9]/.test(base2);
