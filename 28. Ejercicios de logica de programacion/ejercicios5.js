@@ -21,7 +21,8 @@ const convertirBase = (numero = undefined, base = undefined) => {
     }
     if(base === 2) {
         let base2 = numero.toString().split("");
-
+        /* Determina si el numero ingresado contiene numeros de entre 2 y 9.
+            De ser verdad expReg sera igual a true y si no sera igual a false. */
         expReg = /[2-9]/.test(base2);
 
         if(expReg === false){
@@ -47,7 +48,7 @@ const convertirBase = (numero = undefined, base = undefined) => {
     }
 }
 
-convertirBase(101 , 2)
+convertirBase(100,2) // 4
 
 /* 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad
 dada, pe. miFuncion(1000, 20) devolverá 800. */
@@ -64,7 +65,7 @@ const descuento = (valor = undefined, porcentRebaja = undefined) => {
     return console.info(`El monto final es: ${montoFinal}`);
 }
 
-descuento(1000, 20);
+descuento(1000, 20); // 800
 
 
 /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día
@@ -82,4 +83,4 @@ const años = (fecha = undefined) => {
     console.info(`Han transcurrido ${fechaFinal} años desde ${fecha.toDateString()}`);
 }
 
-años(new Date(1984,4,23));
+años(new Date(1984,4,23)); // 35
