@@ -1,6 +1,30 @@
 /* 15) Programa una función para convertir números de base binaria a decimal y viceversa,
 pe. miFuncion(100,2) devolverá 4 base 10. */
 
+// Solucion Jonmircha --------------------------------
+const convertirBinarioDecimal = (numero = undefined, base = undefined) => {
+    if(numero === undefined) return console.warn(`No ingreso el numero a convertir`);
+    if(typeof numero !== "number") return console.error(`El valor a convertir debe ser tipo numerico`);
+    if(base === undefined) return console.warn(`No ingreso la base del numero a convertir`);
+    if(typeof base !== "number") return console.error(`El valor de base debe ser tipo numerico`);
+    if (base !== 10 && base !== 2) return console.error(`La base ${base} no es una base valida`);
+
+    if(base === 2){
+        expReg = /[2-9]/.test(numero);
+        if(expReg === true){
+            console.error(`${numero} no es un numero de base 2`);
+        }else{
+            return console.info(`${numero} base ${base} = ${parseInt(numero, base)} base 10`);
+        }
+    }
+    else if (base === 10){
+        return console.info(`${numero} base ${base} = ${numero.toString(2)} base 2`)
+    }
+}
+convertirBinarioDecimal(100,2); // 4 base 10
+convertirBinarioDecimal(198,10); // 11000110 base 2
+
+// Mi Solucion -------------------------
 const convertirBase = (numero = undefined, base = undefined) => {
     if(numero === undefined) return console.warn(`No ingreso el numero a convertir`);
     if(typeof numero !== "number") return console.error(`El valor a convertir debe ser tipo numerico`);
@@ -51,8 +75,7 @@ const convertirBase = (numero = undefined, base = undefined) => {
         }
     }
 }
-
-convertirBase(100,2) // 4
+// convertirBase(100,2) // 4
 
 /* 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad
 dada, pe. miFuncion(1000, 20) devolverá 800. */
@@ -75,6 +98,27 @@ descuento(1000, 20); // 800
 /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día
 de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020). */
 
+// Solucion jonmircha --------------------------
+const calcularAños = (fecha = undefined) => {
+    if (fecha === undefined) return console.warn(`No ingreso la fecha`);
+    if (!(fecha instanceof Date)) return console.error(`El tipo de dato ingresado no es el correcto`);
+
+    let hoyMenosFecha = new Date().getTime() - fecha.getTime();
+    let añosEnMS = 1000 * 60 * 60 * 24 * 365;
+
+    let añosHumanos = Math.floor(hoyMenosFecha / añosEnMS);
+
+    return (Math.sign(añosHumanos) === -1)
+        ? console.info(`Faltan ${Math.abs(añosHumanos)} años para el ${fecha.getFullYear()}`)
+        : (Math.sign(añosHumanos) === 1)
+            ? console.info(`Han pasado ${Math.abs(añosHumanos)} años desde el ${fecha.getFullYear()}`)
+            : console.info(`Estamos en el año actual ${añosHumanos}`)
+
+}
+calcularAños(new Date(1984,4,23)); // 37
+calcularAños(new Date(1999,10,2)); // 22
+
+// Mi solucion ---------------------------------
 const años = (fecha = undefined) => {
     if (fecha === undefined) return console.warn(`No ingreso la fecha`);
     if (fecha === 'number' || fecha === 'string' || fecha === 'boolean') return console.error(`El tipo de dato ingresado no es el correcto`);
@@ -87,4 +131,4 @@ const años = (fecha = undefined) => {
     console.info(`Han transcurrido ${fechaFinal} años desde ${fecha.toDateString()}`);
 }
 
-años(new Date(1984,4,23)); // 35
+// años(new Date(1984,4,23)); // 38
