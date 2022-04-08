@@ -13,12 +13,12 @@ pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5. */
         vocales = cadena.match(expReg2);
 
         return (consonantes === null && vocales === null)
-            ? console.info(`Candena: ${cadena}, Vocales: 0, Consonantes: 0`)
+            ? console.info(`Cadena: ${cadena}, Vocales: 0, Consonantes: 0`)
             : (vocales === null)
-                ? console.info(`Candena: ${cadena}, Vocales: 0, Consonantes: ${consonantes.length}`)
+                ? console.info(`Cadena: ${cadena}, Vocales: 0, Consonantes: ${consonantes.length}`)
                 : (consonantes === null)
-                    ? console.info(`Candena: ${cadena}, Vocales: ${vocales.length}, Consonantes: 0`)
-                    : console.info(`Candena: ${cadena}, Vocales: ${vocales.length}, Consonantes: ${consonantes.length}`);
+                    ? console.info(`Cadena: ${cadena}, Vocales: ${vocales.length}, Consonantes: 0`)
+                    : console.info(`Cadena: ${cadena}, Vocales: ${vocales.length}, Consonantes: ${consonantes.length}`);
     }
     consonantesVocales("Hola mundo");
 
@@ -122,20 +122,22 @@ const validarPatron = (cadena = "", patron = "") => {
     if(typeof patron !== "string") return console.warn(`El parametro "patron" no es una cadena de texto`);
     if (patron === "") return console.warn(`El parametro "patron" es una cadena vacia`)
 
-    if(patron === "nombre"){
-        let expRegNombre = /^[A-ZÑáéíóúü\s]+$/gi.test(cadena);
+    let expReg;
+    let tipoDato;
 
-        return (expRegNombre)
-            ? console.info(`"${cadena}" es un nombre valido`)
-            : console.info(`"${cadena}" no es un nombre valido`)
+    if(patron === "nombre"){
+        expReg = /^[A-ZÑáéíóúü\s]+$/gi.test(cadena);
+        tipoDato = "nombre";
     }
     if(patron === "email"){
-        let expRegEmail = /[a-z0-9]+(\.[a-z0-9]+)*@[a-z0-9-]+(\.[a-z]{2,15})/i.test(cadena);
-
-        return (expRegEmail)
-            ? console.info(`"${cadena}" es un correo electronico valido`)
-            : console.info(`"${cadena}" no es un correo electronico valido`)
+        expReg = /[a-z0-9]+(\.[a-z0-9]+)*@[a-z0-9-]+(\.[a-z]{2,15})/i.test(cadena);
+        tipoDato = "correo electronico";
     }
+
+    return (expReg)
+            ? console.info(`"${cadena}" es un ${tipoDato} valido`)
+            : console.info(`"${cadena}" no es un ${tipoDato} valido`)
 }
+
 validarPatron("rlugo.est@gmail.com", "email");
 validarPatron("Robin Lugo Boero", "nombre");
