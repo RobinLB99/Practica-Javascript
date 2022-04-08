@@ -7,7 +7,7 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
         if (typeof array !== "object") return console.error(`El tipo de dato ingresado no es un objeto`);
 
         arrayAlCuadrado = [];
-        
+
         for (const elemento of array) {
             let newElement = Math.pow(elemento, 2)
             arrayAlCuadrado.push(newElement);
