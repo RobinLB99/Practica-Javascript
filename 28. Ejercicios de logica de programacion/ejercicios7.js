@@ -38,17 +38,15 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
         if (array.length === 0) return console.warn(`No ingreso un objeto que contenga elementos`);
         if (typeof array !== 'object') return console.error(`El parametro ingresado no es un tipo objeto`);
 
-        numPares = [], numImpares = [];
+        const arrayParesImpares = {
+            Pares: numPares = [],
+            Impares: numImpares = []
+        }
 
         for (const element of array) {
             (element % 2 === 0)
                 ? numPares.push(element)
                 : numImpares.push(element)
-        }
-
-        const arrayParesImpares = {
-            Pares: numPares,
-            Impares: numImpares
         }
 
         console.log(arrayParesImpares);
