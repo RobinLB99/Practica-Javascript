@@ -17,7 +17,7 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
 
     alCuadrado([1, 4, 5])
 
-/* 22. Programa una funcion que dado un array devuelva el numero mas alto y el mas bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolvera [90 , -60] */
+/* 22. Programa una funcion que dado un array devuelva el numero mas alto y el mas bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolvera [99 , -60] */
 
 // Mi solucion ----------------------------------------------------------------
     function mayorMenor(array = []) {
@@ -27,7 +27,10 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
         array.sort(function (a, b) {
             return a - b;
         });
-        console.log(array);
+
+        mayorMenor = [array[array.length-1], array[0]];
+
+        console.log(mayorMenor);
     }
 
     mayorMenor([1, 4, 5, 99, -60])
