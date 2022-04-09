@@ -115,15 +115,17 @@ pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolvera 4.5 */
         }
 
         return console.info(
-            array.reduce((total, numero, index, array) => {
-                total += numero;
-                if (index === array.length - 1) {
-                    return `El promedio de ${array.join("+")} es: ${total/array.length}`
+            array.reduce(
+                (total, numero, index, array) => {
+                    total += numero;
+                    if (index === array.length - 1) {
+                        return `El promedio de ${array.join("+")} es: ${total/array.length}`
+                    }
+                    else{
+                        return total;
+                    }
                 }
-                else{
-                    return total;
-                }
-            })
+            )
         )
     }
 
