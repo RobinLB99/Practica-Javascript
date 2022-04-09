@@ -17,7 +17,8 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
 
     alCuadrado([1, 4, 5])
 
-/* 22. Programa una funcion que dado un array devuelva el numero mas alto y el mas bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolvera [99 , -60] */
+/* 22. Programa una funcion que dado un array devuelva el numero mas alto y el
+mas bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolvera [99 , -60] */
 
 // Mi solucion ----------------------------------------------------------------
     function mayorMenor(array = []) {
@@ -35,7 +36,8 @@ con los numero elevados al cuadrado pe. miFuncion([1, 4, 5]) devolvera [1, 16, 2
 
     mayorMenor([1, 4, 5, 99, -60])
 
-/* Programa una funcion que dado un array de numeros devuelva un objeto con 2 arreglos en el primero almacena los numeros pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolvera {pares: [2,4,6,8,0], impares: [1,3,5,7,9]} */
+/* Programa una funcion que dado un array de numeros devuelva un objeto con 2 arreglos en el primero almacena los numeros pares y en el segundo los impares,
+pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolvera {pares: [2,4,6,8,0], impares: [1,3,5,7,9]} */
 
 // Mi solucion ---------------------------------------------------------------
     const paresImpares = (array = []) => {
