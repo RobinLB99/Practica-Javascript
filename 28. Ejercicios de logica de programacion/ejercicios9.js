@@ -173,7 +173,7 @@ function validarTodosLosDatos(object) {
             iterator.fichaTecnica();
         }
         else{
-            console.warn(`No se pudo imprimir la ficha tecnica de la pelicula ${iterator}`);
+            console.warn(`No se pudo imprimir la ficha tecnica de la pelicula ${iterator.titulo}`);
         }
     }
 }())
