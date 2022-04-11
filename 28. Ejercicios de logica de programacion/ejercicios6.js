@@ -86,7 +86,6 @@ pe. miFuncion("Jonathan MirCha") devolverá verdadero. */
 
     // Mi solucion ---------------------------------------------------
     function correo(cadena = "") {
-        let expReg = new RegExp("@gmail.com","g");
         const expRegEmail = /@gmail.com/g;
 
         validacion = expRegEmail.test(cadena);
