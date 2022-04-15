@@ -3,179 +3,181 @@
 La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
   - Todos los datos del objeto son obligatorios. *
   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los
-     7 restantes números.*
-  - Valida que el título no rebase los 100 caracteres.*
-  - Valida que el director no rebase los 50 caracteres.*
-  - Valida que el año de estreno sea un número entero de 4 dígitos.*
-  - Valida que el país o paises sea introducidos en forma de arreglo.*
-  - Valida que los géneros sean introducidos en forma de arreglo.*
+     7 restantes números. *
+  - Valida que el título no rebase los 100 caracteres. *
+  - Valida que el director no rebase los 50 caracteres. *
+  - Valida que el año de estreno sea un número entero de 4 dígitos. *
+  - Valida que el país o paises sea introducidos en forma de arreglo. *
+  - Valida que los géneros sean introducidos en forma de arreglo. *
   - Valida que los géneros introducidos esten dentro de los géneros
-     aceptados*. *
-  - Crea un método estático que devuelva los géneros aceptados*.
+     aceptados. *
+  - Crea un método estático que devuelva los géneros aceptados. *
   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser
     decimal de una posición. *
   - Crea un método que devuelva toda la ficha técnica de la película. *
   - Apartir de un arreglo con la información de 3 películas genera 3
     instancias de la clase de forma automatizada e imprime la ficha técnica
-    de cada película.*
+    de cada película. *
 
 * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western. */
 
 class pelicula {
-    constructor (idIMDB, titulo, director, anio, pais, generos, calIMDB){
-        this.idIMDB = idIMDB;
+    constructor (id = undefined, titulo = undefined, director = undefined, anio = undefined, pais = undefined, genero = undefined, calificacion = undefined) {
+        this.id = id;
         this.titulo = titulo;
         this.director = director;
         this.anio = anio;
         this.pais = pais;
-        this.genero = generos;
-        this.calIMDB = calIMDB;
+        this.genero = genero;
+        this.calificacion = calificacion;
     }
-    fichaTecnica(){
-        console.info(
-            "ID: " + this.idIMDB +
-            "\nTitulo: " + this.titulo +
-            "\nDirector: " + this.director +
-            "\nAño: " + this.anio +
-            "\nPais: " + this.pais +
-            "\nGeneros: " + this.genero +
-            "\nCalificacion: " + this.calIMDB
-        );
+    fichaTecnica() {
+        console.info(`Id: ${this.id}\nTitulo: ${this.titulo}\nDirector: ${this.director}\nAño de estreno: ${this.anio}\nPais: ${this.pais}\nGenero: ${this.genero}`)
     }
-    static generos(){
-        console.table(generos);
+    static generosAceptados(objeto){
+      console.log(`Los generos aceptados son: ${objeto.toString()}`);
     }
 }
 
 const generos = ['Action', 'Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary' ,'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror', 'Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi', 'Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western']
 
 const peliculas = [
-    new pelicula("TF1234567", "Transformers", "Michael Bay", 2007, ["Estados Unidos"], ["Sci-Fi", "Action"], "7.1"),
-    new pelicula("TB1234567", "The Batman", "Matt Reeves", 2022, ["Estados Unidos"], ["Sci-Fi", "Action"], "8.3"),
-    new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", 2021, ["Estados Unidos"], ["Sci-Fi", "Action"], "8.5"),
+  transformers = new pelicula("TF1234567", "Transformers", "Michael Bay", "2007", ["Estados Unidos"], ["Sci-Fi", "Action"], "7.1"),
+  batman = new pelicula("TB1243567", "The Batman", "Matt Reeves", "2022", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.3"),
+  spiderman = new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", "2021", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.5")
 ]
 
-let validado = true;
-
-function validarTodosLosDatos(object) {
-    sinIngresarDatos = false;
-    for (const key in object) {
-        if (Object.hasOwnProperty.call(object, key)) {
-            if (object[key] === "") {
-                sinIngresarDatos = true;
-            }
+const validarDatosIngresados = (objeto) => {
+  for (const iterator of objeto) {
+    for (const key in iterator) {
+      if (Object.hasOwnProperty.call(iterator, key)) {
+        const element = iterator[key];
+        if(element === undefined){
+          console.error(`Existen datos sin llenar`)
+          return datosIngresados = false;
         }
+      }
     }
-    if (sinIngresarDatos === true) {
-        console.warn('Existen datos sin ingresar. Por favor verifique todos los campos esten llenos');
+  }
+}
+
+const validarId = (object) => {
+  for (const iterator of object) {
+    idIMDB = /[a-z]{2}[0-9]{7}$/gi
+    if (idIMDB.test(iterator.id) !== true){
+      console.error(`El id ${iterator.id} no es valido`);
+      datosCorrectos = false;
+    }
+  }
+}
+
+const validarTitulo = (object) => {
+  for (const iterator of object) {
+    if (iterator.titulo.split('').length > 100) {
+        console.error(`El titulo "${iterator.titulo}" sobrepasa el numero de caracteres permitidos`);
+        datosCorrectos = false;
     }
     else{
-        if (object.idIMDB.split("").length !== 9) {
-            console.error(`El id de la pelicula debe contener 9 caracteres.`);
-            validado = false;
-        }
-
-        if (/[a-z]{2}([0-9]{7})/ig.test(object.idIMDB) !== true) {
-            console.error(`El id de la pelicula no es un id IMDB valido`);
-            validado = false;
-        }
-
-        if (object.titulo.split("").length > 100) {
-            console.error('El titulo de la pelicula tiene mas de 100 caracteres!');
-            validado = false;
-        }
-
-        if (/^[A-ZÑáéíóúü\s]+$/gi.test(object.director) === false) {
-            console.error('El nombre del director tiene caracteres invalidos');
-            validado = false;
-        }
-
-        if (object.director.split("").length > 50) {
-            console.error('El nombre del director tiene mas de 50 caracteres');
-            validado = false;
-        }
-
-        if (/[\p{L}\p{P}\p{M}\p{S}\p{Z}\p{C}]/giu.test(object.anio) === true) {
-            console.error('El año de la pelicula tiene caracteres invalidos')
-            validado = false;
-        }
-
-        if (typeof object.anio !== 'number') {
-            console.error(`El año no puede ser de tipo ${typeof object.anio}`);
-            validado = false;
-        }else{
-            if (object.anio.toString().length !== 4) {
-                console.error('El año de la pelicula debe contener 4 digitos');
-                validado = false;
-            }
-        }
-
-        if (!(object.pais instanceof Array)) {
-            console.error('El pais ingresado no es una array');
-            validado = false;
-        }
-        if (!(object.genero instanceof Array)) {
-            console.error('El o los generos no fueron ingresados en forma de array');
-            validado = false;
-        }
-
-        generoIncluido = false;
-        for (const iterator of object.genero) {
-            if (generos.includes(iterator) === true) {
-                generoIncluido = true;
-            }
-            else{
-                generoIncluido = false;
-            }
-        }
-
-        if (generoIncluido === false) {
-            console.error('Los generos ingresados no coinciden con los de la lista');
-            console.info(`Generos ingresados: `)
-            console.table(object.genero);
-            console.info('Generos permitidos:')
-            console.table(generos);
-            validado = false;
-        }
-
-        if (typeof object.calIMDB !== 'string'){
-            console.error(`La calificacion de la pelicula no puede ser de tipo "${typeof object.calIMDB}"`);
-            validado = false;
-        }else{
-            if (parseFloat(object.calIMDB) > 10){
-                console.error('La calificacion no puede ser mayor a 10 puntos');
-                validado = false;
-            }
-            else{
-                if (parseFloat(object.calIMDB) <= -1){
-                    console.error('La calificacion no puede ser menor a 0');
-                    validado = false;
-                }
-                else{
-                    if (parseFloat(object.calIMDB) === 10){}
-                    else{
-                        if (/^[0-9]+(\.[0-9])/i.test(object.calIMDB) !== true){
-                            console.warn('No ha ingresado una calificacion valida');
-                            validado = false;
-                        }
-                    }
-                }
-            }
-        }
+      tituloIMDB = /[\p{N}\p{P}\p{M}\p{S}\p{C}]/giu
+      if (tituloIMDB.test(iterator.titulo) === true) {
+        console.error(`El titulo "${iterator.titulo}" contiene caracteres invalidos`);
+        datosCorrectos = false;
+      }
     }
+  }
+}
 
+const validarDirector = (object) => {
+  for (const iterator of object) {
+    if (iterator.director.split('').length > 50) {
+        console.error(`El nombre del "${iterator.director}" sobrepasa el numero de caracteres permitidos`);
+        datosCorrectos = false;
+    }
+    else{
+      directorIMDB = /[\p{M}\p{Z}\p{C}\p{N}\p{P}]/giu
+      if (directorIMDB.test(iterator.director) !== true) {
+        console.error(`El nombre "${iterator.director}" contiene caracteres invalidos`);
+        datosCorrectos = false;
+      }
+    }
+  }
+}
+
+const validarAnio = (object) => {
+  for (const iterator of object) {
+    anioIMDB = /[\p{N}]{4}$/giu
+    if (anioIMDB.test(iterator.anio) === false) {
+      console.error(`El año "${iterator.anio}" no es una año valido`);
+      datosCorrectos = false;
+    }
+  }
+}
+
+const validarPaises = (object) => {
+  for (const iterator of object) {
+    if ((iterator.pais instanceof Array) !== true) {
+      console.error(`El pais ${iterator.pais} no fue ingresado en forma de array`);
+      datosCorrectos = false;
+    }
+  }
+}
+
+const validarGeneros = (object, generos) => {
+  for (const iterator of object) {
+    if ((iterator.genero instanceof Array) !== true) {
+      console.error(`El o los generos ${iterator.genero} no fue ingresado en forma de array`);
+      datosCorrectos = false;
+    }
+    else{
+      for (let i = 0; i < iterator.genero.length; i++) {
+        const element = iterator.genero[i];
+        if (!(generos.includes(element))) {
+          console.warn('Los generos ingresados no son generos validos');
+          pelicula.generosAceptados(generos);
+          datosCorrectos = false;
+        }
+      }
+    }
+  }
+}
+
+const validarCalificacion = (object) => {
+  for (const iterator of object) {
+    calif = parseFloat(iterator.calificacion)
+    if (calif > 10) {
+      console.warn(`La calificacion ${iterator.calificacion} excede a la puntuacion maxima permitida`);
+      datosCorrectos = false;
+    }
+    else if (calif < 10 && calif >= 0) {
+      calificacion = /[0-9]+(\.[0-9])$/g
+      if (calificacion.test(iterator.calificacion) !== true) {
+        console.error(`El valor de ${iterator.calificacion} no es una calificacion valida`)
+        datosCorrectos = false;
+      }
+    }
+    else if (calif <= -1) {
+      console.warn(`La calificacion ${iterator.calificacion} no es una calificacion valida. La calificacion no puede ser una inferior a 0`);
+      datosCorrectos = false;
+    }
+  }
 }
 
 (function(){
-    for (const iterator of peliculas) {
-        validarTodosLosDatos(iterator)
-        if (validado === true) {
-            iterator.fichaTecnica();
-        }
-        else{
-            console.warn(`No se pudo imprimir la ficha tecnica de la pelicula ${iterator.titulo}`);
-        }
+  datosingresados = true;
+  validarDatosIngresados(peliculas)
+  if (datosingresados === true) {
+    datosCorrectos = true;
+    validarId(peliculas)
+    validarTitulo(peliculas)
+    validarDirector(peliculas)
+    validarAnio(peliculas)
+    validarPaises(peliculas)
+    validarGeneros(peliculas, generos)
+    validarCalificacion(peliculas)
+    if (datosCorrectos === true) {
+      for (const iterator of peliculas) {
+        iterator.fichaTecnica()
+      }
     }
-}())
-//pelicula.generos()
-
+  }
+})();
