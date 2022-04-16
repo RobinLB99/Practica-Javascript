@@ -129,7 +129,7 @@ class pelicula {
 const peliculas = [
     transformers = new pelicula("TF1234567", "Transformers", "Michael Bay", "2007", ["Estados Unidos"], ["Sci-Fi", "Action"], "7.1"),
     batman = new pelicula("TB1243567", "The Batman", "Matt Reeves", "2022", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.3"),
-    spiderman = new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", "2021", ["Estados Unidos"], ["Sci-Fi", "Action"])
+    spiderman = new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", "2021", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.5")
 ]
 
 const generos = ['Action', 'Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary' ,'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror', 'Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi', 'Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western']
