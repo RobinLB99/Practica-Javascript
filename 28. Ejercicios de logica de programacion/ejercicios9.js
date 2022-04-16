@@ -35,7 +35,9 @@ class pelicula {
         console.log(generos);
     }
     validarDatosIngresados() {
-        if (this.calificacion === undefined) return datosIngresados = false;
+        if (this.calificacion === undefined) {
+            datosIngresados = false;
+        }
     }
     validarId() {
         const idExpReg = /[a-z]{2}[0-9]{7}$/gi
@@ -127,33 +129,31 @@ class pelicula {
 const peliculas = [
     transformers = new pelicula("TF1234567", "Transformers", "Michael Bay", "2007", ["Estados Unidos"], ["Sci-Fi", "Action"], "7.1"),
     batman = new pelicula("TB1243567", "The Batman", "Matt Reeves", "2022", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.3"),
-    spiderman = new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", "2021", ["Estados Unidos"], ["Sci-Fi", "Action"], "8.5")
+    spiderman = new pelicula("SP1234567", "Spiderman No way home", "Jon Watts", "2021", ["Estados Unidos"], ["Sci-Fi", "Action"])
 ]
 
 const generos = ['Action', 'Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary' ,'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror', 'Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi', 'Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western']
 
 pelicula.generosAceptados();
 
-(function(){
-  let datosIngresados = true
-  let datoCorrecto = true
+let datosIngresados = true
+let datoCorrecto = true
 
-  for (const iterator of peliculas) {
-      iterator.validarDatosIngresados()
-      if (datosIngresados === true) {
-          iterator.validarId()
-          iterator.validarTitulo()
-          iterator.validarDirector()
-          iterator.validarAnio()
-          iterator.validarPaises()
-          iterator.validarGeneros()
-          iterator.validarCalificacion()
-          if (datoCorrecto === true) {
-              iterator.fichaTecnica()
-          }
-      }
-      else {
-          console.error(`Existen datos sin ingresar`);
-      }
-  }
-})();
+for (const iterator of peliculas) {
+    iterator.validarDatosIngresados()
+    if (datosIngresados) {
+        iterator.validarId()
+        iterator.validarTitulo()
+        iterator.validarDirector()
+        iterator.validarAnio()
+        iterator.validarPaises()
+        iterator.validarGeneros()
+        iterator.validarCalificacion()
+        if (datoCorrecto === true) {
+            iterator.fichaTecnica()
+        }
+    }
+    else {
+        console.error(`Existen datos sin ingresar`);
+    }
+}
