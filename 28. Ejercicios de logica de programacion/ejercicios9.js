@@ -38,7 +38,7 @@ class pelicula {
       if (this.calificacion === undefined) return datosIngresados = false;
   }
   validarId() {
-      let idExpReg = /[a-z]{2}[0-9]{7}$/gi
+      const idExpReg = /[a-z]{2}[0-9]{7}$/gi
       if (idExpReg.test(this.id) === false) {
           console.error(`El id ${this.id} no es un Id valido`);
           datoCorrecto = false
@@ -50,7 +50,7 @@ class pelicula {
           datoCorrecto = false;
       }
       else {
-          let tituloExpReg = /[\p{L}\p{N}\p{P}\p{Zs}]/giu
+          const tituloExpReg = /[\p{L}\p{N}\p{P}\p{Zs}]/giu
           if (tituloExpReg.test(this.titulo) !== true) {
               console.error(`El titulo ${this.titulo} tiene mas de 100 caracteres`);
               datoCorrecto = false;
@@ -59,8 +59,8 @@ class pelicula {
   }
   validarDirector() {
       if (this.director.length <= 50) {
-          let directorExpReg = /[\p{P}\p{M}\p{S}\p{Zl}\p{Zp}\p{C}]/giu
-          if (directorExpReg.test(this.director) === true) {
+          const directorExpReg = /^[A-ZÑáéíóúü\s]+$/gi
+          if (directorExpReg.test(this.director) === false) {
               console.error(`El nombre "${this.director}" tiene caracteres invalidos`);
               datoCorrecto = false;
           }
@@ -76,7 +76,7 @@ class pelicula {
           datoCorrecto = false;
       }
       else {
-          let anioExpReg = /[\p{L}\p{P}\p{S}\p{C}\p{M}\p{Z}]/giu
+          const anioExpReg = /[\p{L}\p{P}\p{S}\p{C}\p{M}\p{Z}]/giu
           if (anioExpReg.test(this.anio) === true) {
               console.error(`El año "${this.anio}" contiene caracteres invalidos`);
               datoCorrecto = false;
