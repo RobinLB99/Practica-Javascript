@@ -31,14 +31,17 @@ class pelicula {
         this.genero = genero;
         this.calificacion = calificacion;
     }
+
     static generosAceptados() {
         console.log(generos);
     }
+
     validarDatosIngresados() {
         if (this.calificacion === undefined) {
             datosIngresados = false;
         }
     }
+
     validarId() {
         const idExpReg = /[a-z]{2}[0-9]{7}$/gi
         if (idExpReg.test(this.id) === false) {
@@ -46,6 +49,7 @@ class pelicula {
             datoCorrecto = false
         }
     }
+
     validarTitulo() {
         if (this.titulo.length > 100) {
             console.error(`El titulo ${this.titulo} tiene mas de 100 caracteres`);
@@ -59,6 +63,7 @@ class pelicula {
             }
         }
     }
+
     validarDirector() {
         if (this.director.length <= 50) {
             const directorExpReg = /^[A-ZÑáéíóúü\s]+$/gi
@@ -72,6 +77,7 @@ class pelicula {
             datoCorrecto = false;
         }
     }
+
     validarAnio() {
         if (this.anio.length !== 4) {
             console.error(`El año "${this.anio}" debe contener 4 digitos`);
@@ -85,12 +91,14 @@ class pelicula {
             }
         }
     }
+
     validarPaises() {
         if (!(this.pais instanceof Array)) {
             console.error(`Debe ingresar el o los paises en forma de arreglo`);
             datoCorrecto = false;
         }
     }
+
     validarGeneros() {
         if (!(this.genero instanceof Array)) {
             console.error(`Debe ingresar el o los generos en forma de arreglo`);
@@ -105,6 +113,7 @@ class pelicula {
             }
         }
     }
+
     validarCalificacion() {
         if (typeof this.calificacion !== "string") {
             console.error(`El valor de la califiacion debe ser de tipo String`);
@@ -121,6 +130,7 @@ class pelicula {
             }
         }
     }
+
     fichaTecnica() {
         console.info(`ID: ${this.id}\nTitulo: ${this.titulo}\nDirector: ${this.director}\nAño de estreno: ${this.anio}\nPais: ${this.pais}\nGenero: ${this.genero}\nCalificacion: ${this.calificacion}`)
     }
