@@ -120,12 +120,15 @@ class pelicula {
             datoCorrecto = false;
         }
         else {
-            if (parseFloat(this.calificacion) > 10) {
-                console.error(`La calificacion: '${this.calificacion}'. La calificacion no puede supera los 10 puntos`);
-                datoCorrecto = false;
+            let calificacionExpReg = /^[0-9]{1,2}$|^[0-9]{1,2}\.[0-9]{1,2}$/g
+            if (calificacionExpReg.test(this.calificacion)){
+                if (parseFloat(this.calificacion) > 10) {
+                    console.error(`La calificacion: '${this.calificacion}'. La calificacion no puede supera los 10 puntos`);
+                    datoCorrecto = false;
+                }
             }
-            else if (parseFloat(this.calificacion) <= -1) {
-                console.error(`La califcacion: '${this.calificacion}'. La calificacion no puede ser inferior a 0 puntos`);
+            else {
+                console.error(`${this.calificacion} no es una calificacion valida`);
                 datoCorrecto = false;
             }
         }
